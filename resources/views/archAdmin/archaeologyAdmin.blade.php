@@ -166,10 +166,11 @@
            
                     <div class="govGrid">
                       <a href="/show/{{$item->id}}" >
-                      <img  style="max-height: 190px; min-height: 190px" src="images/{{$item->image}}" alt="grid">
+                      <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/images/{{$item->image}}" alt="grid">
                       <div class="absGridTitle">
                      
                       </div>
+                      
                       </a>
                     </div>
                
