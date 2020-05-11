@@ -59,9 +59,7 @@ class AechaeologyController extends Controller
                 $fileNameStore = $fileName .'_'.time().'.'.$extension;
             
                 $path = $request->file('image')->move(base_path() . '/public/images/', $fileNameStore);
-                $img = Image::make($path)->resize(1920, 1080, function($constraint) {
-                    $constraint->aspectRatio();
-                });
+                
                
                  echo $fileNameStore;
               
