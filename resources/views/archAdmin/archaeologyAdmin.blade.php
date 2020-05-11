@@ -177,7 +177,6 @@
                 <div class="card-body">
                 <h5 class="card-title">{{$item->title}}</h5>
                 <h6 class="card-title">{{$item->archaeology_type}}</h6>
-                <p class="card-text">{{ $item->description }}</p>
                 <a href="/archaeologyAdmin/{{$item->id}}/edit" class="btn btn-primary">Edit</a>
                   {!! Form::open(['action' => ['AechaeologyController@destroy',$item->id], 'method'=>'POST']) !!}
                   {{Form::hidden('_method' ,'DELETE') }}
