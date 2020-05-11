@@ -188,6 +188,6 @@ class AechaeologyController extends Controller
         
                 $item->delete() ;   
                
-                return redirect('/archaeology')->with('success', 'Delete successfully');
+                return redirect('/archaeologyAdmin')->with('success', 'Delete successfully');
     }
 }
