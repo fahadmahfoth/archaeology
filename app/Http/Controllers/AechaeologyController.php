@@ -58,7 +58,8 @@ class AechaeologyController extends Controller
                 $extension = $request->file('image')->getClientOriginalExtension();
                 $fileNameStore = $fileName .'_'.time().'.'.$extension;
             
-                $path = $request->file('image')->move(base_path() . '/public/images/', $fileNameStore);
+                // $path = $request->file('image')->move(base_path() . '/public/images/', $fileNameStore);
+                $path = Storage::disk('public')->put('images/', $fileNameStore);
                 
                
                  echo $fileNameStore;
