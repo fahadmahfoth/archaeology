@@ -95,47 +95,31 @@
                     <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
                     <li data-target="#main-carousel" data-slide-to="1"></li>
                     <li data-target="#main-carousel" data-slide-to="2"></li>
-                    <li data-target="#main-carousel" data-slide-to="3"></li>
-                    <li data-target="#main-carousel" data-slide-to="4"></li>
+                  
+                   
                   </ol><!-- /.carousel-indicators -->
                   
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block img-fluid" src="https://s19.postimg.cc/qzj5uncgj/slide1.jpg" alt="">
+                      <img class="d-block img-fluid" src="styles/img/image1.png"  alt="">
                       <div class="carousel-caption d-none d-md-block">
-                        <h1>بغداد</h1>
-                        <p>بغداد هي عاصمة العراق وهي المركز الاقتصادي والإداري والتربوي للبلاد ، بنيت في العصر العباسي. كما تحتوي على العديد من الآثار الإسلامية.</p>
+                      
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block img-fluid" src="styles/img/image2.jpg"  alt="">
+                      <div class="carousel-caption d-none d-md-block">
 
                       </div>
                     </div>
+                   
                     <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://s19.postimg.cc/lmubh3h0j/slide2.jpg"  alt="">
+                      <img src="styles/img/image2.png"alt=""  class="d-block img-fluid">
                       <div class="carousel-caption d-none d-md-block">
-                        <h3>نينوى</h3>
-                        <p>نينوى هي ثاني أكبر مدينة في العراق تقع في شمال البلاد ، وقد نشأت في العصر الآشوري وتضم العديد من المعالم التاريخية والإسلامية التي سكنت نينوى قبل 6000 سنة قبل الميلاد.</p>
+
                       </div>
                     </div>
-                    <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://s19.postimg.cc/99hh9lr5v/slide3.jpg" alt="">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h3>البصرة</h3>
-                        <p>البصرة هي ثالث أكبر مدينة في العراق ، وتعتبر البصرة العاصمة الاقتصادية للعراق ، والتي بدورها مدينة قديمة بنيت في زمن الخلافة الإسلامية ، ويعتقد البعض أن حدائق عدن حيث ينحدر آدم تقع في مدينة القرنة الواقعة قرب البصرة</p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://s19.postimg.cc/nenabzsnn/slide4.jpg" alt="" class="d-block img-fluid">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h3>كربلاء المقدسة</h3>
-                        <p>محافظة عراقية تقع في الفرات الاوسط ، تعد من اهم المدن الدينية في العراق لانها تضم ضريح الامام الحسين عليه السلام. يعود تاريخ المدينة إلى العهد البابلي وكانت هذه المنطقة مقبرة للنصارى قبل الفتح الإسلامي، ويرى بعض الباحثين أن كلمة كربلاء يعني (قرب الاله) وهي كلمة اصلها من البابلية</p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://s19.postimg.cc/nenabzsnn/slide4.jpg" alt="" class="d-block img-fluid">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h3>أربيل</h3>
-                        <p>وهي رابع أكبر مدينة من حيث المساحة في العراق بعد بغداد والبصرة والموصل والسادسة من حيث عدد السكان . تُعد أربيل من أقدم المدن التي استمر بها الإستيطان البشريّ بالعالم .  تأسست سنة 2300 قبل الميلاد تقريباً على يد السومريين.</p>
-                      </div>
-                    </div>
+                 
                   </div>
                   <!-- /.carousel-inner -->
                   
