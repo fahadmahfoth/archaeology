@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Archaeology ;
+use App\Governorate ;
 use Image;
 
 
@@ -24,7 +25,7 @@ class AechaeologyController extends Controller
     public function index()
     {
 
-    $aechaeology =   Archaeology::orderBy('created_at','desc')->paginate(10);
+    $aechaeology =   Archaeology::orderBy('created_at','desc')->paginate(20);
         
         return view('archAdmin.archaeologyAdmin')->with('archaeology',$aechaeology);
     }
@@ -36,7 +37,7 @@ class AechaeologyController extends Controller
      */
     public function create()
     {
-        return view('archAdmin.create');
+        return view('archAdmin.create')->with('city',Governorate::all());
     }
 
     /**
@@ -76,7 +77,7 @@ class AechaeologyController extends Controller
 
         $project->title = $request->input('title');
         $project->description = $request->input('description');
-        $project->archaeology_type = $request->input('archaeology_type');
+        $project->city_id = $request->input('city_id');
         $project->location = $request->input('location');
         $project->image   = $fileNameStore ;
         $project->save();
@@ -116,8 +117,9 @@ class AechaeologyController extends Controller
     public function edit($id)
     {
         $aechaeology =   Archaeology::find($id);
+        $city = Governorate::all();
 
-        return view('archAdmin.edit')->with('archaeology',$aechaeology);
+        return view('archAdmin.edit')->with(['archaeology'=>$aechaeology,'city'=>$city]);
     }
 
     /**
@@ -157,7 +159,7 @@ class AechaeologyController extends Controller
 
         $project->title = $request->input('title');
         $project->description = $request->input('description');
-        $project->archaeology_type = $request->input('archaeology_type');
+        $project->city_id = $request->input('city_id');
         $project->location = $request->input('location');
         $project->image   = $fileNameStore ;
         $project->save();

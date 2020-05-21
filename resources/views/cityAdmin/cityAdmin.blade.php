@@ -87,13 +87,13 @@
                   </li>
 
 
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="/archaeologyAdmin">
                       <i class="material-icons">language</i>
                         <p>{{ __('ARCHAEOLOGY') }}</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="/cityAdmin">
                       <i class="material-icons">language</i>
                         <p>{{ __('Governorates') }}</p>
@@ -134,7 +134,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
 <div class="container-fluid">
   <div class="navbar-wrapper">
-    <a class="navbar-brand" href="#">Archaeology Management</a>
+    <a class="navbar-brand" href="#">Governorate Management</a>
     
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -146,7 +146,7 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end">
   
-    <a href="/archaeologyAdmin/create" type="button" class="btn btn-success">Add + </a>  
+    <a href="/cityAdmin/create" type="button" class="btn btn-success">Add + </a>  
   </div>
 </div>
 </nav>
@@ -166,14 +166,14 @@
           <div class="row">
 
   
-            @foreach ($archaeology as $item)
+            @foreach ($governorate as $item)
             <div style="padding: 10px">
                 <div class="card"  style="width: 18rem; ">
            
                     <div class="govGrid">
-                      <a href="/show/{{$item->id}}" >
-                        @if ($item->image)
-                        <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/images/{{$item->image}}" alt="grid">
+                      <a href="#" >
+                        @if (isset($item->image))
+                        <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/city/{{$item->image}}" alt="grid">
                             
                         @else
                         <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/images/imgimg.png" alt="grid">
@@ -189,9 +189,9 @@
               
                 <div class="card-body">
                 <h5 class="card-title">{{$item->title}}</h5>
-                <h6 class="card-title">{{$item->governorates->title}}</h6>
-                <a href="/archaeologyAdmin/{{$item->id}}/edit" class="btn btn-primary">Edit</a>
-                  {!! Form::open(['action' => ['AechaeologyController@destroy',$item->id], 'method'=>'POST']) !!}
+               
+                <a href="/cityAdmin/{{$item->id}}/edit" class="btn btn-primary">Edit</a>
+                  {!! Form::open(['action' => ['GovernorateController@destroy',$item->id], 'method'=>'POST']) !!}
                   {{Form::hidden('_method' ,'DELETE') }}
                    {{Form::submit('Delete',['class'=>"pull-right btn btn-danger btn-lg"]) }}
                 {!! Form::close() !!}
@@ -204,13 +204,11 @@
           
             
             @endforeach
-
-         
              
              
           
           </div>
-          {{ $archaeology->links() }}
+          {{ $governorate->links() }}
         
       </div>
     </div>

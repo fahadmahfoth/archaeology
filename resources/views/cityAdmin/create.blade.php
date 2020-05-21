@@ -9,9 +9,7 @@
     <!-- Canonical SEO -->
 
 
-    <link rel="stylesheet" href="styles/styles.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+  
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="product">
@@ -59,7 +57,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              <input type="hidden" name="_token" value="NKN81BvuQSzEbJlULUVrTDRewUlcAIJhPbOwli18">       {{ csrf_field() }}      </form>
+              <input type="hidden" name="_token" value="NKN81BvuQSzEbJlULUVrTDRewUlcAIJhPbOwli18">    {{ csrf_field() }}         </form>
           <div class="wrapper ">
             <div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
               <!--
@@ -71,13 +69,12 @@
                 <a href="https://creative-tim.com/" class="simple-text logo-normal">
                     ARCHAEOLOGY Dashboard
                 </a>
-                
               </div>
+              
               <div class="sidebar-wrapper">
                 <ul class="nav">
               
                 
-               
                   <li class="nav-item ">
                     <a class="nav-link" href="/archaeologyf3xadmin">
                       {{-- <span class="sidebar-mini"> UM </span> --}}
@@ -87,13 +84,13 @@
                   </li>
 
 
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="/archaeologyAdmin">
                       <i class="material-icons">language</i>
                         <p>{{ __('ARCHAEOLOGY') }}</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="/cityAdmin">
                       <i class="material-icons">language</i>
                         <p>{{ __('Governorates') }}</p>
@@ -114,6 +111,7 @@
 
                   @endif
                
+                
                   
                  
                   <a class="dropdown-item" href="{{ route('logout') }}"
@@ -134,8 +132,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
 <div class="container-fluid">
   <div class="navbar-wrapper">
-    <a class="navbar-brand" href="#">Archaeology Management</a>
-    
+    <a class="navbar-brand" href="#">Governorate Management </a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
     
@@ -146,7 +143,7 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end">
   
-    <a href="/archaeologyAdmin/create" type="button" class="btn btn-success">Add + </a>  
+    
   </div>
 </div>
 </nav>
@@ -155,62 +152,67 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        @if(session()->has('success'))
-<div class="alert alert-success">
-    {{ session()->get('success') }}
-</div>
-@endif
-          
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">Governorate</h4>
+              <p class="card-category"> Here you can Add  City</p>
+            </div>
+            <div class="card-body">
+              <div class="content">
+                <div class="card-body ">
 
-
-          <div class="row">
-
-  
-            @foreach ($archaeology as $item)
-            <div style="padding: 10px">
-                <div class="card"  style="width: 18rem; ">
-           
-                    <div class="govGrid">
-                      <a href="/show/{{$item->id}}" >
-                        @if ($item->image)
-                        <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/images/{{$item->image}}" alt="grid">
-                            
-                        @else
-                        <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/images/imgimg.png" alt="grid">
-                            
-                        @endif
-                      <div class="absGridTitle">
-                     
+                  <form action="/cityAdmin" method="POST" enctype="multipart/form-data" >
+                    {{ csrf_field() }}
+                    @if (session('status'))
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="alert alert-success">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                          </button>
+                          <span>{{ session('status') }}</span>
+                        </div>
                       </div>
-                      
-                      </a>
                     </div>
-               
-              
-                <div class="card-body">
-                <h5 class="card-title">{{$item->title}}</h5>
-                <h6 class="card-title">{{$item->governorates->title}}</h6>
-                <a href="/archaeologyAdmin/{{$item->id}}/edit" class="btn btn-primary">Edit</a>
-                  {!! Form::open(['action' => ['AechaeologyController@destroy',$item->id], 'method'=>'POST']) !!}
-                  {{Form::hidden('_method' ,'DELETE') }}
-                   {{Form::submit('Delete',['class'=>"pull-right btn btn-danger btn-lg"]) }}
-                {!! Form::close() !!}
+                  @endif
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
+                    <div class="col-sm-7">
+                      <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
+                        <input class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" id="input-name" type="text" placeholder="{{ __('Type Title Here') }}" required="true" aria-required="true"/>
+                        @if ($errors->has('name'))
+                          <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+                 
+                
+
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">{{ __('Image') }}</label>
+                    <div class="col-sm-7">
+                      
+                      <div  class="custom-file">
+                        <input name="image" type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+
+                 
+
+                  <button type="submit" name="submit" class="btn btn-primary btn-lrg" > Save Data </button>
+
+                  </form>
+                 
+                  
                 </div>
               </div>
-            
+     
+       
             </div>
-          
-            
-          
-            
-            @endforeach
-
-         
-             
-             
-          
           </div>
-          {{ $archaeology->links() }}
         
       </div>
     </div>

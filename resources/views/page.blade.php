@@ -76,7 +76,16 @@
 
                   <div class="row">
                   <div class="pageImgContain">
-                  <img src="../images/{{$archaeology->image}}" alt="page">
+                    
+                    @if (isset($archaeology->image))
+                   
+                    <img src="../images/{{$archaeology->image}}" alt="page">  
+                        
+                    @else
+                    <img src="../images/imgimg.png" alt="page">
+                        
+                    @endif
+                  
                   </div>
                   </div>
 
@@ -90,12 +99,25 @@
                   </div>
                   </div>
 
+                  @if (strpos($archaeology->location,'https://www.google.com/maps/embed'))
+
                   <div class="row">
-                  <div class="pageMap">
-                  <!-- Map -->
-                  <iframe src="{{ $archaeology->location }}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  </div>
-                  </div>
+                    <div class="pageMap">
+                    <!-- Map -->
+                    <iframe src="{{ $archaeology->location }}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    </div>
+                      
+                  @else
+
+                  <div class="row">
+                    <div class="pageMap">
+                    <H4>عذراً لا يتوفر المكان على الخارطة الان</H4>
+                    </div>
+                    </div>
+                      
+                  @endif
+                 
 
             </div>
         </div>

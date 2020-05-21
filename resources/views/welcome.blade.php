@@ -193,8 +193,15 @@
   @foreach ($governorates as $item)
   <div class="col-md-4">
     <div class="govGrid">
-    <a href="/show/{{$item->id}}">
-      <img style="max-height: 250px; min-height: 250px" src="images/{{$item->image}}" alt="grid">
+    <a href="/archaeologybycity/{{$item->id}}">
+      @if (isset($item->image))
+      <img style="max-height: 250px; min-height: 250px" src="city/{{$item->image}}" alt="grid">
+          
+      @else
+      <img style="max-height: 250px; min-height: 250px" src="images/imgimg.png" alt="grid">
+          
+      @endif
+      
       <div class="absGridTitle">
       <h2>{{$item->title}}</h2>
       </div>
@@ -236,7 +243,13 @@
     <div class="col-md-4">
       <div class="govGrid">
       <a href="/show/{{$item->id}}">
+        @if (isset($item->image))
         <img style="max-height: 250px; min-height: 250px" src="images/{{$item->image}}" alt="grid">
+            
+        @else
+        <img style="max-height: 250px; min-height: 250px" src="images/imgimg.png" alt="grid">
+            
+        @endif
         <div class="absGridTitle">
         <h2>{{$item->title}}</h2>
         </div>

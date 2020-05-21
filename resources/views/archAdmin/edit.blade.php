@@ -76,21 +76,29 @@
               
                 
                
-                  <li class="nav-item">
+                  <li class="nav-item ">
                     <a class="nav-link" href="/archaeologyf3xadmin">
                       {{-- <span class="sidebar-mini"> UM </span> --}}
                       <i class="material-icons">person</i>
                       <span class="sidebar-normal"> {{ __('User Management') }} </span>
                     </a>
                   </li>
+
+
                   <li class="nav-item active">
                     <a class="nav-link" href="/archaeologyAdmin">
                       <i class="material-icons">language</i>
                         <p>{{ __('ARCHAEOLOGY') }}</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cityAdmin">
+                      <i class="material-icons">language</i>
+                        <p>{{ __('Governorates') }}</p>
+                    </a>
+                  </li>
 
-                
+
                   @if(auth()->user()->permission=='superuser')
 
               
@@ -103,8 +111,7 @@
                   </li>
 
                   @endif
-                
-                  
+               
                  
                   <a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
@@ -147,7 +154,7 @@
           <div class="card">
             <div class="card-header card-header-primary">
               <h4 class="card-title ">Archaeology</h4>
-              <p class="card-category"> Here you can Add  Archaeology</p>
+              <p class="card-category"> Here you can Edit  Archaeology</p>
             </div>
             <div class="card-body">
               <div class="content">
@@ -180,14 +187,19 @@
                     </div>
                   </div>
                   <div class="row">
-                    <label class="col-sm-2 col-form-label">{{ __('Type') }}</label>
+                    <label class="col-sm-2 col-form-label">{{ __('City') }}</label>
                     <div class="col-sm-7">
                       <div class="row">
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <select class="custom-select"   name="archaeology_type">
-                            <option value="archaeology">Archaeology</option>
-                            <option value="governorate">Governorate</option>
+                        <select class="custom-select" name="city_id">
+                           
+                           
+                            @foreach ($city as $item)
+
+                        <option value="{{$item->id}}">{{$item->title}}</option>
+                                
+                            @endforeach
                             
                           </select>
                      

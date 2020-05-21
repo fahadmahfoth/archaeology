@@ -89,6 +89,12 @@
                         <p>{{ __('ARCHAEOLOGY') }}</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cityAdmin">
+                      <i class="material-icons">language</i>
+                        <p>{{ __('Governorates') }}</p>
+                    </a>
+                  </li>
 
                   @if(auth()->user()->permission=='superuser')
 

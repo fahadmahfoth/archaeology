@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Archaeology ;
+use App\Governorate ;   
+
 
 class indexController extends Controller
 {
@@ -12,8 +14,8 @@ class indexController extends Controller
     public function index()
     {        
         return view('welcome')->with([
-            'archaeology'=> Archaeology::where('archaeology_type', 'archaeology')->take(6)->get() ,
-            'governorates'=>Archaeology::where('archaeology_type', 'governorate')-> take(6)->get()
+            'archaeology'=> Archaeology::take(6)->get() ,
+            'governorates'=>Governorate::take(6)->get()
         ], );
     }
 
@@ -23,7 +25,7 @@ class indexController extends Controller
     {
 
         return view('archaeology')->with([
-            'archaeology'=> Archaeology::orderBy('created_at','desc')->where('archaeology_type', 'archaeology')->get() ,
+            'archaeology'=> Archaeology::orderBy('created_at','desc')->get() ,
  
         ], );
 
@@ -35,13 +37,26 @@ class indexController extends Controller
     {
 
         return view('governorates')->with([
-            'governorates'=> Archaeology::orderBy('created_at','desc')->where('archaeology_type', 'governorate')->get() ,
+            'governorates'=> Governorate::orderBy('created_at','desc')->get() ,
  
         ], );
 
 
 
     }
+
+    public function archaeologybycity($id)
+    {
+
+        return view('archaeology')->with([
+            'archaeology'=> Archaeology::orderBy('created_at','desc')->where('city_id',$id)->get() ,
+ 
+        ], );
+
+
+
+    }
+
 
 
     public function show($id){
