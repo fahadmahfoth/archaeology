@@ -172,13 +172,15 @@
            
                     <div class="govGrid">
                       <a href="#" >
-                        @if (isset($item->image))
-                        <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/city/{{$item->image}}" alt="grid">
+                        @if ($item->image)
+                        <img  style="max-height: 190px; min-height: 190px" src="/city/{{$item->image}}" alt="grid">
                             
                         @else
-                        <img  style="max-height: 190px; min-height: 190px" src="{{ URL::to('/')}}/images/imgimg.png" alt="grid">
+                        <img  style="max-height: 190px; min-height: 190px" src="/images/imgimg.png" alt="grid">
                             
                         @endif
+
+                        
                       <div class="absGridTitle">
                      
                       </div>
