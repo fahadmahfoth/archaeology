@@ -100,7 +100,7 @@
                     </a>
                   </li>
 
-
+{{-- 
                   @if(auth()->user()->permission=='superuser')
 
               
@@ -113,7 +113,7 @@
                   </li>
 
                   @endif
-               
+                --}}
                   
                  
                   <a class="dropdown-item" href="{{ route('logout') }}"
