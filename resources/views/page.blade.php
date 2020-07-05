@@ -99,7 +99,9 @@
                   </div>
                   </div>
 
-                  @if (strpos($archaeology->location,'https://www.google.com/maps/embed'))
+                  
+
+                  @if (strpos($archaeology->location,'https://www.google.com/maps/embed') !== false)
 
                   <div class="row">
                     <div class="pageMap">
