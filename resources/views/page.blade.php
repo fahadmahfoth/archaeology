@@ -76,15 +76,20 @@
 
                   <div class="row">
                   <div class="pageImgContain">
+
                     
-                    @if (isset($archaeology->image))
-                   
-                    <img src="../images/{{$archaeology->image}}" alt="page">  
+                    
+                    @if(strpos($archaeology->image,'noImage.jpg') !== false)
+                    <img style="max-height: 250px; min-height: 250px" src="../images/imgimg.jpg" alt="grid">
+                    
+                 
                         
                     @else
-                    <img src="../images/imgimg.png" alt="page">
+                    <img style="max-height: 250px; min-height: 250px" src="../images/{{$archaeology->image}}" alt="grid">
+                    
                         
                     @endif
+                    
                   
                   </div>
                   </div>

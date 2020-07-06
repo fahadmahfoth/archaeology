@@ -20,13 +20,17 @@
       <div class="col-md-4">
         <div class="govGrid">
           <a href="/show/{{$item->id}}" >
-            @if (isset($item->image))
-            <img style="max-height: 250px; min-height: 250px" src="../images/{{$item->image}}" alt="grid">
+            @if(strpos($item->image,'noImage.jpg') !== false)
+            <img style="max-height: 250px; min-height: 250px" src="../images/imgimg.jpg" alt="grid">
+            
+         
                 
             @else
-            <img style="max-height: 250px; min-height: 250px" src="../images/imgimg.png" alt="grid">
+            <img style="max-height: 250px; min-height: 250px" src="../images/{{$item->image}}" alt="grid">
+            
                 
             @endif
+            
           <div class="absGridTitle">
           <h2>{{$item->title}}</h2>
           </div>

@@ -143,104 +143,49 @@
 </div>
 </nav>
 
-@if(Session::has('flash_message'))
-<div class="container">      
-    <div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
+
+
+<div class='col-lg-4 col-lg-offset-4'>
+
+    <h1><i class='fa fa-user-plus'></i> Add User</h1>
+    <hr>
+
+    {{-- @include ('errors.list') --}}
+
+    {{ Form::open(array('url' => 'users')) }}
+
+    <div class="form-group">
+        {{ Form::label('name', 'Name') }}
+        {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div>
-</div>
-@endif
 
-<div class="col-lg-10 col-lg-offset-1">
-  {{-- <h1><i class="fa fa-users"></i> User Administration <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a> --}}
-  {{-- <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1> --}}
-  <hr>
-  <div class="table-responsive">
-      <table class="table table-bordered table-striped">
+    <div class="form-group">
+        {{ Form::label('email', 'Email') }}
+        {{ Form::email('email', '', array('class' => 'form-control')) }}
+    </div>
 
-          <thead>
-              <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Date/Time Added</th>
-                  <th>Options</th>
-                  <th>permistion</th>
-              </tr>
-          </thead>
+  
 
-          <tbody>
-              @foreach ($users as $user)
-              <tr>
+    <div class="form-group">
+        {{ Form::label('password', 'Password') }}<br>
+        {{ Form::password('password', array('class' => 'form-control')) }}
 
-                  <td>{{ $user->name }}</td>
-                  <td>{{ $user->email }}</td>
-                  <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
-                  {{-- <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>Retrieve array of roles associated to a user and convert to string --}}
+    </div>
 
-                  <td>
-                  <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+    <div class="form-group">
+        {{ Form::label('password', 'Confirm Password') }}<br>
+        {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
 
-                  {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
-                  {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                  {!! Form::close() !!}
+    </div>
 
-                  </td>
-                  <td>{{ $user->permission }}</td>
-              </tr>
-              @endforeach
-          </tbody>
+    
 
-      </table>
-  </div>
+    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
 
-  <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+    {{ Form::close() }}
 
 </div>
 
-
-
-
-
-
-
-{{ $users->links() }}
-
-{{-- 
-
-    <div class="content">
-  <div class="container-fluid">
-
-
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">name</th>
-          <th scope="col">email</th>
-          <th scope="col">permission</th>
-        </tr>
-      </thead>
-      <tbody>
-       
-@foreach ($users as $item)
-
-
-<tr>
-<th scope="row">{{$loop->iteration}}</th>
-<td>{{$item->name}}</td>
-  <td>{{$item->email}}</td>
-  <td>{{$item->permission}}</td>
-</tr>
-@endforeach
-
-      </tbody>
-    </table>
- 
-  </div>
-</div>
- 
-</div>
-</div>
-                       --}}
      
         <!--   Core JS Files   -->
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
