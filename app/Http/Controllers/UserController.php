@@ -16,9 +16,19 @@ class UserController extends Controller
      * @param  \App\User  $model
      * @return \Illuminate\View\View
      */
-    public function index(User $model)
+    public function index(User $model,Request $request)
     {
-        return view('users.index', ['users' => $model->paginate(15)]);
+
+        if($request->user()['permission']=='superuser' ){
+           
+           
+            return view('users.index', ['users' => $model->paginate(15)]);
+        }else{
+            return "You are Not Admin ";
+            
+        }
+        
+        
     }
 
 
@@ -53,7 +63,12 @@ class UserController extends Controller
             'password'=>'required|min:6|confirmed'
         ]);
 
-        $user = User::create($request->only('email', 'name', 'password'));
+
+        $user = User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']), //<==encrypt here
+        ]);
 
        
 
@@ -97,7 +112,12 @@ class UserController extends Controller
             'password'=>'required|min:6|confirmed'
         ]);
 
-        $input = $request->only(['name', 'email', 'password']);
+        $input = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']), //<==encrypt here
+        ];
+        
        
         $user->fill($input)->save();
 
@@ -113,14 +133,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
-        $user = User::findOrFail($id);
+
+        if($request->user()['permission']=='superuser' ){
+           
+           
+            $user = User::findOrFail($id);
         $user->delete();
 
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully deleted.');
+        }else{
+            return "You are Not Admin ";
+            
+        }
+       
     }
 }
 
