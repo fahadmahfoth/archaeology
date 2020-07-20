@@ -25,7 +25,7 @@
    
           
       @else
-      <img style="max-height: 250px; min-height: 250px" src="../images/{{$item->image}}" alt="grid">
+      <img style="max-height: 250px; min-height: 250px" src="../city/{{$item->image}}" alt="grid">
       
           
       @endif
