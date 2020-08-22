@@ -21,7 +21,7 @@
 
       <div class="upperHeader">
       <div class="logo">
-        <img src="../styles/img/logo.png" width="170px" alt="">
+        <img src="../styles/img/logo.png" width="220px" alt="">
         {{-- <a href="#">Logo</a> --}}
       </div>
       <div  class="prventForm">
