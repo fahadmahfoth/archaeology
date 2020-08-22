@@ -461,6 +461,7 @@ header {
 .pageImgContain {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 .pageImgContain img {
     width: 80%;
