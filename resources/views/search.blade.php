@@ -39,7 +39,7 @@
       <ul>
         <li style="padding-right: 3%" class="liSmooth col-md-12"><a data-value="sideDoc" href="/"><span>الرئيسية</span></a></li>
         <li style="padding-right: 3%" class="liSmooth col-md-12"><a data-value="governorates" href="/#governorates"><span>المحافظات</span></a></li>
-        <li style="padding-right: 3%" class="liSmooth col-md-12"><a data-value="archaeology" href="/#archaeology"><span>الأمكان الأثرية</span></a></li>
+        <li style="padding-right: 3%" class="liSmooth col-md-12"><a data-value="archaeology" href="/#archaeology"><span>الأماكن الأثرية</span></a></li>
         <li style="padding-right: 3%" class="liSmooth col-md-12"><a data-value="about" href="/#about"><span>حول المشروع</span></a></li>
       </ul>
     </div>
