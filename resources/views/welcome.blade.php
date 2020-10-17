@@ -330,7 +330,7 @@
             <img src="styles/img/user.jpg" alt="grid">
             <div class="aboutCardTect">
               <div class="aboutCT">
-                      <h4>Shahla Ali</h4>
+                      <h4>S-Eng . Shahla Ali</h4>
                       <span>Mobile Developer</span>
               </div>
           </div>
@@ -347,7 +347,7 @@
             <img src="styles/img/user.jpg" alt="grid">
             <div class="aboutCardTect">
               <div class="aboutCT">
-                      <h4>Lubna Ahmed</h4>
+                      <h4>Eng . Lubna Ahmed</h4>
                       <span>Information gathering</span>
               </div>
           </div>
@@ -358,7 +358,7 @@
             <img src="styles/img/user.jpg" alt="grid">
             <div class="aboutCardTect">
               <div class="aboutCT">
-                      <h4>Farah Ali</h4>
+                      <h4>Eng . Farah Ali</h4>
                       <span>Information gathering</span>
               </div>
           </div>
@@ -378,7 +378,7 @@
             <img src="styles/img/user.jpg" alt="grid">
             <div class="aboutCardTect">
               <div class="aboutCT">
-                      <h4>Ahmed Rajab</h4>
+                      <h4>S-Eng . Ahmed Rajab</h4>
                       <span>Information gathering</span>
               </div>
           </div>
@@ -415,7 +415,7 @@
             <div class="aboutCardTect">
               <div class="aboutCT">
                       <h4>Taha Ammar</h4>
-                      <span>Manager of Project / UI UX Designers </span>
+                      <span>Manager of Project / UI UX Designers </span> <br>
                       <span>Mobile Developer</span>
                       
               </div>
@@ -429,7 +429,7 @@
             <img src="styles/img/Essa.jpg" alt="grid">
             <div class="aboutCardTect">
               <div class="aboutCT">
-                      <h4>Muhammed Essa</h4>
+                      <h4>Eng . Muhammed Essa</h4>
                       <span>Manager of Code for Iraq</span>
               </div>
           </div>
